@@ -15,4 +15,7 @@
 numeros = [1, 5, -1, 6, 10, 2, -5]
 suma = 0   # Variable ya inicializada, la suma arranca en cero
 
-print("terminamos!, el resultado final almacenado en suma debe ser 18")
+for numero in numeros:
+    suma += numero
+print("terminamos!, el resultado final almacenado en suma debe ser 18 =" , suma)
+print('listo, terminado')
