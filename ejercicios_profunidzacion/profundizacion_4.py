@@ -50,19 +50,45 @@ temperatura_promedio = 0    # Al finalizar el loop deberá aquí alamcenar el pr
 temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la lista
 
 # Colocar el bucle aqui......
+for temp in temp_dataloger: #MAXIMA
+    if (temperatura_max is None or temp > temperatura_max): 
+        temperatura_max = temp
+print('La temperatura maxima es :' , temperatura_max)
 
+for temp in temp_dataloger: #MINIMA
+    if temperatura_min is None or temp< temperatura_min:
+        temperatura_min = temp
+print('La temperatura minima es:' , temperatura_min)
+
+
+for temp in temp_dataloger: #SUMATORIA
+    temperatura_sumatoria += temp
+
+temperatura_len = len(temp_dataloger)
+print(temperatura_len , 'es la cantidad de temperaturas registradas')
+# Al finalizar el bucle debe calcular el promedio como:
+# temperatura_promedio = temperatura_sumatoria / cantidad_temperatuas
+
+#PROMEDIO
+temperatura_promedio = temperatura_sumatoria / temperatura_len
+print('El promedio de temperatura es de:' , temperatura_promedio)
+
+     
 # Al finalizar el bucle compare si el valor que usted calculó para
 # temperatura_max y temperatura_min coincide con el que podría calcular
 # usando la función "max" y la función "min" de python
 # función "max" --> https://www.w3schools.com/python/ref_func_max.asp
 # función "min" --> https://www.w3schools.com/python/ref_func_min.asp
+temperatura_max = max(temp_dataloger)
+temperatura_min = min(temp_dataloger)
 
-# Al finalizar el bucle debe calcular el promedio como:
-# temperatura_promedio = temperatura_sumatoria / cantidad_temperatuas
+
+print('comprobacion:' , temperatura_max , temperatura_min , temperatura_sumatoria)
 
 # Corroboren los resultados de temperatura_sumatoria
 # usando la función "sum"
 # función "sum" --> https://www.w3schools.com/python/ref_func_sum.asp
+temperatura_sumatoria = sum(temp_dataloger)
 
 '''
 Una vez que tengamos nuestros valores correctamente calculados debemos
@@ -83,3 +109,6 @@ https://es.weatherspark.com/y/28981/Clima-promedio-en-Buenos-Aires-Argentina-dur
 # ¿En qué época del año nos encontramos?
 # Imprima el resultado en pantalla
 # Debe utilizar temperatura_max y temperatura_min para definirlo
+
+''' ME QUEDA PENDIENTE EL PLANTEO DE LA TEMPORADA, NO SE DE QUE FORMA PLANTEAR LAS VARIABLES DE TEMPERATURAS PARA Q
+COINCIDAN CON LOS PARAMETROS DE APROXIMACION '''
